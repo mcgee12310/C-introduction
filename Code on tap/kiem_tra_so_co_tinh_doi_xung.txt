@@ -1,0 +1,19 @@
+#include <stdio.h>
+int main(){
+    char a[1000];
+    int b=1,n;
+    fgets(a,sizeof(a),stdin);
+    for(int i=1;;i++){
+        if(a[i-1]=='\n') break;
+        n=i;
+    }
+    for(int i=1;i<=n;i++){
+        if(a[i-1]==a[n-i]){}
+        else{
+            b=0;
+            break;
+        }
+    }
+    if(b==0) printf("0");
+    else printf("1");
+}

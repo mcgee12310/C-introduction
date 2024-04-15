@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <math.h>
+int main(){
+    double x[1000],y[1000],s=0,d=0;
+    x[0]=0;y[0]=0;
+    for ( int i = 1;; i++ ){
+        scanf("%lf:%lf", &x[i],&y[i]);
+        if (x[i]==-1) break;
+    } 
+    for ( int i = 1;; i++ ){
+        if (x[i]==-1) break;
+        s+=sqrt(pow(x[i]-x[i-1],2)+pow(y[i]-y[i-1],2));
+        if(sqrt(pow(x[i],2)+pow(y[i],2))>=d) d=sqrt(pow(x[i],2)+pow(y[i],2));
+    } 
+    printf("%.2lf %.2lf",s,d);
+}
